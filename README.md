@@ -1,1 +1,1 @@
-# QR-Based Attendance-Marking-System
+# QR-Based Attendance Marking System
