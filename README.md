@@ -23,17 +23,17 @@ Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/qr-attendance.git
+   https://github.com/Chamaracperera/Attendance-Marking-System.git
    ```
 2. Navigate to the project folder:
    ```bash
-   cd qr-attendance
+   cd Attendance-Marking-System
    ```
 3. Set up a local server (e.g., XAMPP, WAMP, or LAMP).
-4. Import the provided **SQL database** (`database.sql`) into MySQL.
+4. Import the provided **SQL database** (`attendance_system.sql`) into MySQL.
 5. Start your server and access the project in your browser:
    ```
-   http://localhost/qr-attendance
+   http://localhost/Attendance-Marking-System
    ```
 
 ## 📥 Additional Dependencies
