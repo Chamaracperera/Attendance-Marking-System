@@ -120,16 +120,20 @@ Attendance-Marking-System/
 This project is made possible through the collaboration of the following team members:
 
 * **Feature 1 – Login and User Registration**
-  * [Chamara Perera ](https://github.com/Chamaracperera)
-* **Feature 2 – Books Registration**
-  * [Chanuli Sandanayake](https://github.com/Chanuli-Sandanayake)
   * [Sathsarani Geethamali](https://github.com/Sathsarani2002)
-* **Feature 3 – Library Member Registration (by library staff)**
-  * [Avindi Navodya ](https://github.com/AvindiNavodya)
-  * [Chamathya Sepiyumi](https://github.com/Du2002)
-* **Feature 4 – Book Borrow Details**
-  * [Imansa Gayathmi](https://github.com/Imansa2002)
+* **Feature 2 –QR code generation & scanning**
   * [Prageeth Dissanayake](https://github.com/PrageethDisanayaka)
+* **Feature 3 – manage Reports**
+  * [Chamara Perera ](https://github.com/Chamaracperera)
+* **Feature 4 –  **
+  * [Chanuli Sandanayake](https://github.com/Chanuli-Sandanayake)
+* **Feature 5 – **
+  * [Avindi Navodya ](https://github.com/AvindiNavodya)
+* **Feature 6 – **
+  * [Chamathya Sepiyumi](https://github.com/Du2002)
+* **Feature 7 – **
+  * [Imansa Gayathmi](https://github.com/Imansa2002)
+  
 
 ## 🤝 Contributing
 
