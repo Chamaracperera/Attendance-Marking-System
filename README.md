@@ -47,19 +47,10 @@ Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application
 
 🚨 **Note:** The following files are not included in the repository. You need to download and place them in the relevant directories:
 
-- **PHPMailer**: Download from [GitHub](https://github.com/PHPMailer/PHPMailer) and place it inside the `vendor/` folder.
+- **PHPMailer**: Download from [GitHub](https://github.com/PHPMailer/PHPMailer) and place it inside the `php/` folder.
 - **Report Converters**:
-  - **Excel Export**: Download the required library from [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) and place the files inside the `export/excel/` folder.
-  - **PDF Export**: Download TCPDF from [TCPDF GitHub](https://github.com/tecnickcom/TCPDF) and place the files inside the `export/pdf/` folder.
-
-You can get these dependencies from their official sources or package repositories.
-
-🚨 **Note:** The following files are not included in the repository. You need to download and place them in the relevant directories:
-
-- **PHPMailer**: Download and place it inside the `vendor/` folder.
-- **Report Converters**:
-  - **Excel Export**: Place the required files inside the `export/excel/` folder.
-  - **PDF Export**: Place the required files inside the `export/pdf/` folder.
+  - **Excel Export**: Download the required library from [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) and place the files inside the `reports/vendor/` folder.
+  - **PDF Export**: Download TCPDF from [TCPDF GitHub](https://github.com/tecnickcom/TCPDF) and place the files inside the `reports/vendor/` folder.
 
 You can get these dependencies from their official sources or package repositories.
 
@@ -81,20 +72,22 @@ You can get these dependencies from their official sources or package repositori
 ## 📂 Project Structure
 ```
 qr-attendance/
-│── assets/       # CSS, JS, Images
-│── database/     # SQL scripts
-│── includes/     # PHP functions
-│── reports/      # Exported reports (Excel/PDF)
-│── export/       # Report converters (Excel/PDF)
-│── vendor/       # External libraries (PHPMailer, etc.)
-│── view_reports.php   # Report generation page
-│── generate_report.php  # Backend logic for reports
-│── config.php    # Database configuration
-│── index.php     # Login page
-│── dashboard.php # Main dashboard
-│── scan_qr.php   # QR scanning functionality
-│── notifications.php # Push notification logic
-│── README.md     # Project documentation
+│── css/       
+│── img/
+|── database/ # SQL scripts
+│── js/     
+│── php/      # PHP functions 
+  │── admin/        # admin features
+  │── chanuli/      # 
+  │── lecturer/     # 
+  │── message/  # Backend logic for reports
+  │── PHPmailer    # you must download and plce in this path
+  │── reports/     # manage reports
+  │── students/    # 
+  │── db.php       # database connection
+  │── logout.php   # Push notification logic
+  │── mailer.php   # manage mail
+│── README.md      # Project documentation
 ```
 
 ## 🛡 Security Considerations
@@ -113,7 +106,7 @@ qr-attendance/
 
 Each team member is responsible for implementing specific features:
 
-- **[Your Name]** – Attendance Reports & Export (Excel/PDF)
+- **[Chamara Perera]** – Attendance Reports & Export (Excel/PDF)
 - **[Collaborator 1]** – QR Code Scanning & Student Management
 - **[Collaborator 2]** – Admin Panel & Lecturer Assignments
 - **[Collaborator 3]** – Push Notifications & User Authentication
