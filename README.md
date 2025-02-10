@@ -5,8 +5,6 @@
     <img src="img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">QR-Based Attendance Marking System</h3>
-
   <p align="center">
     🚀 This web application simplifies attendance tracking using QR codes, ensuring accurate records and seamless reporting for universities and institutions.
     <br />
@@ -118,14 +116,20 @@ Attendance-Marking-System/
 
 ## 🤝 Collaborations
 
-Each team member is responsible for implementing specific features:
 
-- **[Chamara Perera]** – Attendance Reports & Export (Excel/PDF)
-- **[Collaborator 1]** – QR Code Scanning & Student Management
-- **[Collaborator 2]** – Admin Panel & Lecturer Assignments
-- **[Collaborator 3]** – Push Notifications & User Authentication
-- **[Collaborator 4]** – Graphical Reports & Chart.js Integration
-- **[Collaborator 5]** – Mobile Responsive Design & UI Enhancements
+This project is made possible through the collaboration of the following team members:
+
+* **Feature 1 – Login and User Registration**
+  * [Chamara Perera ](https://github.com/Chamaracperera)
+* **Feature 2 – Books Registration**
+  * [Chanuli Sandanayake](https://github.com/Chanuli-Sandanayake)
+  * [Sathsarani Geethamali](https://github.com/Sathsarani2002)
+* **Feature 3 – Library Member Registration (by library staff)**
+  * [Avindi Navodya ](https://github.com/AvindiNavodya)
+  * [Chamathya Sepiyumi](https://github.com/Du2002)
+* **Feature 4 – Book Borrow Details**
+  * [Imansa Gayathmi](https://github.com/Imansa2002)
+  * [Prageeth Dissanayake](https://github.com/PrageethDisanayaka)
 
 ## 🤝 Contributing
 
