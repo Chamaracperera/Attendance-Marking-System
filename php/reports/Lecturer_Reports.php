@@ -42,7 +42,7 @@ if (!isset($_SESSION['user_name'])) {
                         </div>
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="../lecturer/Lecturer_Dashboard.php">Home</a></li>
                     <li><a href="#">Help</a></li>
                 </ul>
                 <span class="notification-btn material-symbols-rounded">notifications</span>
