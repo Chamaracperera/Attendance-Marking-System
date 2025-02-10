@@ -31,14 +31,7 @@ Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application
    ```
 3. Set up a local server (e.g., XAMPP, WAMP, or LAMP).
 4. Import the provided **SQL database** (`database.sql`) into MySQL.
-5. Configure the database connection in `config.php`:
-   ```php
-   define('DB_HOST', 'localhost');
-   define('DB_USER', 'root');
-   define('DB_PASS', 'yourpassword');
-   define('DB_NAME', 'attendance_db');
-   ```
-6. Start your server and access the project in your browser:
+5. Start your server and access the project in your browser:
    ```
    http://localhost/qr-attendance
    ```
