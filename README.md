@@ -64,7 +64,7 @@ You can get these dependencies from their official sources or package repositori
 
 ## 📂 Project Structure
 ```
-qr-attendance/
+Attendance-Marking-System/
 │── css/       
 │── img/
 |── database/ # SQL scripts
