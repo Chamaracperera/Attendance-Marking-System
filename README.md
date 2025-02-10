@@ -2,14 +2,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/Chamaracperera/Attendance-Marking-System.git">
-    <img src="img/01.png" alt="Logo" width="80" height="80">
+    <img src="img/logo.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">QR-Based Attendance Marking System</h3>
 
   <p align="center">
     🚀 This web application simplifies attendance tracking using QR codes, ensuring accurate records and seamless reporting for universities and institutions.
-
     <br />
     <a href="https://github.com/Chamaracperera/Attendance-Marking-System.git"><strong>Explore the docs »</strong></a>
     <br />
