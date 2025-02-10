@@ -14,6 +14,7 @@ Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application
    - 🎓 **Selected Student** (Attendance report for a specific student)
    - ⏳ **Selected Time Period** (Start & end date filtering)
    - 🎟 **Event-wise** (Filtered by event number)
+
 ✅ **Graphical Representation** – Visualize attendance trends with **Chart.js**.
 ✅ **Excel & PDF Export** – Generate and store reports in **Excel** (saved in the `report` folder) and **PDF** (via TCPDF).  
 ✅ **Push Notifications** – Notify lecturers when a student is absent. 🔔
