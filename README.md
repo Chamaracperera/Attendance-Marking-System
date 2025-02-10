@@ -1,7 +1,28 @@
 # QR-Based Attendance Marking System
+<br />
+<div align="center">
+  <a href="https://github.com/Chamaracperera/Attendance-Marking-System.git">
+    <img src="img/01.png" alt="Logo" width="80" height="80">
+  </a>
+
+  <h3 align="center">QR-Based Attendance Marking System</h3>
+
+  <p align="center">
+    🚀 This web application simplifies attendance tracking using QR codes, ensuring accurate records and seamless reporting for universities and institutions.
+
+    <br />
+    <a href="https://github.com/Chamaracperera/Attendance-Marking-System.git"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/Chamaracperera/Attendance-Marking-System.git">View Demo</a>
+    ·
+    <a href="https://github.com/Chamaracperera/Attendance-Marking-System/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    ·
+    <a href="https://github.com/Chamaracperera/Attendance-Marking-System/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
 
-Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application simplifies attendance tracking using QR codes, ensuring accurate records and seamless reporting for universities and institutions.
 
 ## ✨ Features
 
