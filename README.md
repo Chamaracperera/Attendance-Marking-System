@@ -1,5 +1,6 @@
 # QR-Based Attendance Marking System
 
+
 Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application simplifies attendance tracking using QR codes, ensuring accurate records and seamless reporting for universities and institutions.
 
 ## ✨ Features
@@ -43,6 +44,15 @@ Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application
    ```
 
 ## 📥 Additional Dependencies
+
+🚨 **Note:** The following files are not included in the repository. You need to download and place them in the relevant directories:
+
+- **PHPMailer**: Download from [GitHub](https://github.com/PHPMailer/PHPMailer) and place it inside the `vendor/` folder.
+- **Report Converters**:
+  - **Excel Export**: Download the required library from [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) and place the files inside the `export/excel/` folder.
+  - **PDF Export**: Download TCPDF from [TCPDF GitHub](https://github.com/tecnickcom/TCPDF) and place the files inside the `export/pdf/` folder.
+
+You can get these dependencies from their official sources or package repositories.
 
 🚨 **Note:** The following files are not included in the repository. You need to download and place them in the relevant directories:
 
@@ -121,3 +131,4 @@ This project is **open-source** under the MIT License.
 ---
 
 🎉 **Happy Coding & Keep Innovating!** 🚀
+
