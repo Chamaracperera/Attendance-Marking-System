@@ -102,7 +102,9 @@ $endDate = $data['end_date'] ?? null; // Get end date, can be null if no records
 $totalAbsences = $total_lectures - $totalPresents;
 
 // Calculate attendance percentage
-$attendancePercentage = $total_lectures > 0 ? (int)(($totalPresents / $total_lectures) * 100) : 0;
+$attPercentage = $total_lectures > 0 ? ($totalPresents / $total_lectures) * 100 : 0;
+$attendancePercentage = round($attPercentage);
+
 
 // Determine qualification for exam
 $qualified = ($attendancePercentage >= 80) ? "Yes" : "No";
