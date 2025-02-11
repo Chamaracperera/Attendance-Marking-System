@@ -143,7 +143,3 @@ Pull requests are welcome! Feel free to **fork** the repository and submit impro
 
 This project is **open-source** under the MIT License.
 
----
-
-🎉 **Happy Coding & Keep Innovating!** 🚀
-
