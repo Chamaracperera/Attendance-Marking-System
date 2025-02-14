@@ -1,5 +1,13 @@
 <?php 
-require '../php/db.php'; // Ensure this path matches your actual db connection path
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header('Location:../../index.html?error=notloggedin');
+    exit();
+}
+
+require '../db.php'; // Ensure this path matches your actual db connection path
 
 $year = $_POST['year']; 
 $department = $_POST['department'];
