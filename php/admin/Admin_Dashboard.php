@@ -30,17 +30,29 @@ if (!isset($_SESSION['username'])) {
                 <ul class="links">
                 <span class="close-btn material-symbols-rounded">close</span>
                 <li><a href="#">Home</a></li>
-                <li><a href="#" id="manageUserBtn">Manage User</a></li>
-                <li><a href="#">Manage Batch Details</a></li>
-                <li><a href="#">Manage Course Details</a></li>
-                <li><a href="#">Manage Location</a></li>
+                
                 </ul>
             <div class="navbar-right">
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </nav>
     </header>
+    <main>
+        <section class="options">
+            <div class="option">
+                <a href="user.php">Manage User</a>
+            </div>
+            <div class="option">
+                <a href="batch.php">Manage Batch Details</a>
+            </div>
+            <div class="option">
+                <a href="#">Manage Course Details</a>
+            </div>
+            <div class="option">
+                <a href="#">Manage Location</a>
+            </div>
+        </section>
+    </main>
     
     
     

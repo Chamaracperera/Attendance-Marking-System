@@ -171,11 +171,11 @@ function clearSearch(searchInputId, tableId) {
 
 // Add event listener for the "Add New Lecturer" button
 document.getElementById('addLecturerBtn').addEventListener('click', function() {
-    window.location.href = '../php/lecturer/Lecturer_Signup.php';  // Adjust the path as necessary
+    window.location.href = '../lecturer/Lecturer_Signup.php';  // Adjust the path as necessary
 });
 
 document.getElementById('addStudentBtn').addEventListener('click', function() {
-    window.location.href = '../php/student/Student.php';  // Adjust the path as necessary
+    window.location.href = '../student/Student.php';  // Adjust the path as necessary
 });
 
 // Function to handle user type selection (Lecturers or Students)

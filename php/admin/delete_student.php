@@ -1,5 +1,13 @@
 <?php
-require '../php/db.php';
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header('Location:../../index.html?error=notloggedin');
+    exit();
+}
+
+require '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_id = $_POST['student_id'];

@@ -1,33 +1,30 @@
+document.getElementById('addBatchBtn').addEventListener('click', function () {
+    const year = document.getElementById('year').value;
+    const feedbackMessage = document.getElementById('feedbackMessage');
 
-// JavaScript to handle the form submission
-document.getElementById("addBatchBtn").addEventListener("click", function() {
-    const year = document.getElementById("year").value;
-    const feedbackMessage = document.getElementById("feedbackMessage");
-
-    if (!year) {
-        feedbackMessage.textContent = "Please enter a batch year.";
-        feedbackMessage.style.color = "red";
+    // Simple validation before sending
+    if (!/^\d{4}_\d{2}$/.test(year)) {
+        feedbackMessage.innerHTML = "<span style='color: red;'>Invalid format. Use YYYY_YY (e.g., 2024_25).</span>";
         return;
     }
 
+    // Send AJAX request
     const formData = new FormData();
-    formData.append("year", year);
+    formData.append('year', year);
 
-    fetch("../crud/batch.php", {
-        method: "POST",
+    fetch('batch_process.php', { // <-- Calls the processing script
+        method: 'POST',
         body: formData
     })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Response Data:", data); // Debugging log to check data received
-        feedbackMessage.textContent = data.message;
-        feedbackMessage.style.color = data.status === "success" ? "green" : "red";
-        if (data.status === "success") document.getElementById("batchForm").reset();
-    })
-    .catch(error => {
-        console.error("Error:", error); // Console log for network error debugging
-        feedbackMessage.textContent = "An error occurred. Please try again.";
-        feedbackMessage.style.color = "red";
-    });
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                feedbackMessage.innerHTML = "<span style='color: green;'>" + data.message + "</span>";
+            } else {
+                feedbackMessage.innerHTML = "<span style='color: red;'>" + data.message + "</span>";
+            }
+        })
+        .catch(error => {
+            feedbackMessage.innerHTML = "<span style='color: red;'>An error occurred: " + error.message + "</span>";
+        });
 });
-
