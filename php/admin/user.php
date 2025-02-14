@@ -1,5 +1,13 @@
 <?php
-require '../php/db.php';
+session_start();
+
+// Check if the user is logged in
+if (!isset($_SESSION['username'])) {
+    header('Location:../../index.html?error=notloggedin');
+    exit();
+}
+
+require '../db.php';
 ?>
 
 <!DOCTYPE html>
@@ -8,7 +16,7 @@ require '../php/db.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>QR-Based Attendance Marking System - User Management</title>
-    <link rel="shortcut icon" href="../img/logo.png">
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="user.css">
 </head>
 <body>
@@ -23,14 +31,9 @@ require '../php/db.php';
         <div class="navbar-right">
             <ul class="links">
                 <span class="close-btn material-symbols-rounded">close</span>
-                <li><a href="#">Home</a></li>
-                <li><a href="../crud/user.php" id="manageUserBtn">Manage User</a></li>
-                <li><a href="../crud/batch.php">Manage Batch Details</a></li>
-                <li><a href="#">Manage Course Details</a></li>
-                <li><a href="#">Manage Location</a></li>
+                <li><a href="Admin_Dashboard.php">Home</a></li>
             </ul>
             <div class="navbar-right">
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </div>
@@ -113,7 +116,7 @@ require '../php/db.php';
 </div>
 
 <script src="../../JS/script_2.js"></script>
-<script src="../crud/user.js"></script>
+<script src="user.js"></script>
 
 </body>
 </html>
