@@ -18,6 +18,8 @@ Welcome to the **QR-Based Attendance Marking System**! 🚀 This web application
 ✅ **Excel & PDF Export** – Generate and store reports in **Excel** (saved in the `report` folder) and **PDF** (via TCPDF).  
 ✅ **Push Notifications** – Notify lecturers when a student is absent. 🔔
 ✅ **Mobile Responsive** – Optimized views for **desktop & mobile**, displaying summarized data smartly.
+✅ **Add Lectures and Events** – Schedule Lectures and Events.
+
 
 ## 🛠 Installation
 
@@ -54,6 +56,8 @@ You can get these dependencies from their official sources or package repositori
 3. **View Reports** – Generate attendance reports with filtering options.
 4. **Export Data** – Download reports as **Excel/PDF** for analysis.
 5. **Receive Notifications** – Lecturers get notified of absences.
+6. **Add Lectures** – Lecturers can schedule lectures with Details.
+7. **Add Events** – Event Managers can schedule events with Details.
 
 ## 🖥 Technologies & Languages Used
 
@@ -71,7 +75,7 @@ Attendance-Marking-System/
 │── js/     
 │── php/      # PHP functions 
   │── admin/        # admin features
-  │── chanuli/      # 
+  │── add_lectures.php    #add lectures and event details
   │── lecturer/     # 
   │── message/  # Backend logic for reports
   │── PHPmailer    # you must download and plce in this path
@@ -105,6 +109,8 @@ Each team member is responsible for implementing specific features:
 - **[Collaborator 3]** – Push Notifications & User Authentication
 - **[Collaborator 4]** – Graphical Reports & Chart.js Integration
 - **[Collaborator 5]** – Mobile Responsive Design & UI Enhancements
+- **[Chanuli Sandanayake]** – Add Lectures and Event Details
+
 
 ## 🤝 Contributing
 
