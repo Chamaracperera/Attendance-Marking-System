@@ -2,12 +2,12 @@
 session_start();
 
 // Check if the user is logged in
-if (!isset($_SESSION['user_name'])) {
+if (!isset($_SESSION['name'])) {
     header('Location:../../index.html?error=notloggedin');
     exit();
  }
  
- $username = $_SESSION['user_name'];
+ $username = $_SESSION['name'];
 
 include '../db.php';
 $sql = "SELECT 
@@ -51,11 +51,10 @@ $result = $conn->query($sql);
                     <ul class="links">
                         <div class="profile">
                             <img src="../../img/user.png" class="profile-photo">
-                            <span class="username"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                            <span class="username"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
                         </div>
                         <span class="close-btn material-symbols-rounded">close</span>
                         <li><a href="#">Home</a></li>
-                        <li><a href="#">Help</a></li>
                     </ul>
                     <span class="notification-btn material-symbols-rounded">notifications</span>
                     <button class="logout-btn" id="logoutBtn">LOGOUT</button>
