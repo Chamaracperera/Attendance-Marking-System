@@ -46,7 +46,7 @@ if (!isset($_SESSION['username'])) {
                 <a href="batch.php">Manage Batch Details</a>
             </div>
             <div class="option">
-                <a href="#">Manage Course Details</a>
+                <a href="assign.php">Assign Batch to Courses/ Lecturers</a>
             </div>
             <div class="option">
                 <a href="#">Manage Location</a>
