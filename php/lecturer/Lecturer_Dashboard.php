@@ -53,13 +53,13 @@ if (!isset($_SESSION['user_name'])) {
                 <a href="#">Generate QR Code</a>
             </div>
             <div class="option">
-                <a href="#">Courses</a>
+                <a href="../addlectures/index.php">Add Lectures/ Events</a>
             </div>
             <div class="option">
-                <a href="#">Messages</a>
+                <a href="../message/view_absences.php">Absences Messages</a>
             </div>
             <div class="option">
-                <a href="../reports/Lecturer_Reports.php">Reports</a>
+                <a href="../reports/Lecturer_Reports.php">Genarate Reports</a>
             </div>
         </section>
     </main>
