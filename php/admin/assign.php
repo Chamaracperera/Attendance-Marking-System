@@ -192,5 +192,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             });
         });
     </script>
+    <script src="../../js/script_2.js"></script>
+    
+    <script>
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+            alert("You have been logged out!");
+            window.location.href = "../logout.php";
+        });
+
+    </script>
 </body>
 </html>
