@@ -80,9 +80,11 @@ You can get these dependencies from their official sources or package repositori
 ## 🖥 Technologies & Languages Used
 
 - **Languages:** PHP, HTML, JavaScript, CSS
-- **Frontend:** HTML, CSS, JavaScript, Bootstrap
+- **Frontend:** HTML, CSS, JavaScript
 - **Backend:** PHP, MySQL
-- **Libraries:** TCPDF (PDF export), Chart.js (Graphs), AJAX (Dynamic Data Fetching)
+- **Libraries:** TCPDF (PDF export), PhpSpreadsheet (Excel export), PHPMailer(Emails), Chart.js (Graphs), AJAX (Dynamic Data Fetching)
+- **Code Editor:** VS Code
+- **Localserver**: XAMPP, WAMP
 
 ## 📂 Project Structure
 ```
