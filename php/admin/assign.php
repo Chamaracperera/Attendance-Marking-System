@@ -33,11 +33,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 
     if ($inserted) {
-        echo 'Batch, Department, Subjects, and Lecturer Assigned Successfully!';
+        echo "<script>alert('Batch, Department, Subjects, and Lecturer Assigned Successfully!');</script>";
     } else {
-        echo 'Failed to assign records. Please try again.';
+        echo "<script>alert('Failed to assign records. Please try again.');</script>";
     }
     exit;
+    
 }
 ?>
 
