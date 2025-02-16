@@ -52,7 +52,7 @@ if (!isset($_SESSION['name'])) {
     <main>
         <section class="options">
             <div class="option">
-                <a href="#">Scan QR Code</a>
+                <a href="../Location_Track/index.html">Scan QR Code</a>
             </div>
             <div class="option">
                 <a href="#">Courses</a>
