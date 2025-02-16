@@ -76,7 +76,7 @@ You can get these dependencies from their official sources or package repositori
 4. **Export Data** – Download reports as **Excel/PDF** for analysis.
 5. **Receive Notifications** – Lecturers get notified of absences.
 6. **Add Lectures and Events Details** – Lecturers and event managers can schedule lectures, events with details.
-7. **View Lectures and Events Schedules** – students are able to view lectures, events from latest.
+7. **View Lectures and Events Schedules** – Students are able to view lectures, events from latest.
 
 ## 🖥 Technologies & Languages Used
 
