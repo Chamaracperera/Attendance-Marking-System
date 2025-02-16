@@ -37,7 +37,8 @@
 ✅ **Excel & PDF Export** – Generate and store reports in **Excel** (saved in the `report` folder) and **PDF** (via TCPDF).  
 ✅ **Push Notifications** – Notify lecturers when a student is absent. 🔔
 ✅ **Mobile Responsive** – Optimized views for **desktop & mobile**, displaying summarized data smartly.
-✅ **Add Lectures and Events** – Schedule Lectures and Events.
+✅ **Add Lectures and Events** – Schedule lectures and events with it's details.
+✅ **View Lecture and Event Schedules** – View lectures and events from latest.
 
 ## 🛠 Installation
 
@@ -74,8 +75,8 @@ You can get these dependencies from their official sources or package repositori
 3. **View Reports** – Generate attendance reports with filtering options.
 4. **Export Data** – Download reports as **Excel/PDF** for analysis.
 5. **Receive Notifications** – Lecturers get notified of absences.
-6. **Add Lectures** – Lecturers can schedule lectures with Details.
-7. **Add Events** – Event Managers can schedule events with Details.
+6. **Add Lectures and Events Details** – Lecturers and event managers can schedule lectures, events with details.
+7. **View Lectures and Events Schedules** – students are able to view lectures, events from latest.
 
 ## 🖥 Technologies & Languages Used
 
@@ -95,7 +96,8 @@ Attendance-Marking-System/
 │── js/     
 │── php/      # PHP functions 
   │── admin/        # admin features
-  │── add_lectures/    #add lectures and event details
+  │── addlectures/    #add lectures and event details
+  │── view_lectures/    #view lectures and event schedules
   │── lecturer/     # 
   │── message/  # Backend logic for reports
   │── PHPmailer    # you must download and plce in this path
@@ -130,7 +132,7 @@ This project is made possible through the collaboration of the following team me
   * [Prageeth Dissanayake](https://github.com/PrageethDisanayaka)
 * **Feature 3 – manage Reports**
   * [Chamara Perera ](https://github.com/Chamaracperera)
-* **Feature 4 –  Add Lectures and Event Details
+* **Feature 4 – Manage Lectures and Event Schedules**
   * [Chanuli Sandanayake](https://github.com/Chanuli-Sandanayake)
 * **Feature 5 – **
   * [Avindi Navodya ](https://github.com/AvindiNavodya)
