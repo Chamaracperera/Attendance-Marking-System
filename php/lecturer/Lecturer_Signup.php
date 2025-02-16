@@ -7,13 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $department = $_POST['department'];
     $password = $_POST['password'];
 
-
-    // Validate email
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        die("Invalid email format.");
+        header("Location: lecturer.html?stat=Invalid_email_format");
+        exit();
     }
 
-    // Check if email already exists
     $sql = "SELECT * FROM lecturer WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
 
@@ -34,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     mysqli_stmt_close($stmt);
 
-    // Insert new user
     $sql = "INSERT INTO Lecturer (name, email, department_id, password) VALUES (?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 

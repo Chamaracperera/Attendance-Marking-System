@@ -19,16 +19,12 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $pwdCheck = password_verify($pass, $row['password']);
     if ($pwdCheck == true) {
-        // Login successful
         session_start();
-
-        // Store lecturer data in session
         $_SESSION['lecturer_id'] = $row['lecturer_id'];
         $_SESSION['user_name'] = $row['name'];
         $_SESSION['email'] = $row['email'];
         $_SESSION['department_id'] = $row['department_id'];
 
-        // Fetch department name
         $dept_id = $row['department_id'];
         $sql_dept = "SELECT department_name FROM department WHERE department_id = ?";
         $stmt_dept = $conn->prepare($sql_dept);
@@ -42,12 +38,11 @@ if ($result->num_rows > 0) {
         header("Location: Lecturer_Dashboard.php?stat=Login_successfully");
         exit();
     } else {
-        // Invalid password
         header("Location: Lecturer.html?stat=Invalid_email_or_password");
+        exit();
     }
 } else {
-    // Invalid email
     header("Location: Lecturer.html?stat=Invalid_email_or_password");
+    exit();
 }
-
 ?>

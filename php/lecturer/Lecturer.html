@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../../css/style.css">
+   
 </head>
 <body>
     <header>
@@ -20,18 +21,19 @@
     </header>
     <div class="container">
         <div class="content">
+            <!-- Dynamic Messages -->
             <div id="form-message" class="form-message"></div>
+
+            <!-- Login Form -->
             <form id="login-form" action="Lecturer_login.php" method="POST">
                 <div class="text">Login</div>
                 <div class="field">
                     <input type="email" name="email" required>
                     <label>Email</label>
-                    <span class="error-message"></span>
                 </div>
                 <div class="field">
                     <input type="password" name="password" required>
                     <label>Password</label>
-                    <span class="error-message"></span>
                 </div>
                 <div class="show-password">
                     <input type="checkbox" id="login-show-password">
@@ -48,17 +50,17 @@
                     <a href="../../index.html">Back to Selection</a>
                 </div>
             </form>
+
+            <!-- Signup Form -->
             <form id="signup-form" action="Lecturer_Signup.php" method="POST" style="display: none;">
                 <div class="text">Sign up</div>
                 <div class="field">
                     <input type="text" name="user_name" required>
                     <label>Username</label>
-                    <span class="error-message"></span>
                 </div>
                 <div class="field">
                     <input type="email" name="email" required>
                     <label>Email</label>
-                    <span class="error-message"></span>
                 </div>
                 <div class="field">
                     <select name="department" required>
@@ -68,12 +70,10 @@
                         <option value="3">AT</option>
                         <option value="4">ET</option>
                     </select>
-                    <span class="error-message"></span>
                 </div>
                 <div class="field">
                     <input type="password" name="password" required>
                     <label>Password</label>
-                    <span class="error-message"></span>
                 </div>
                 <div class="show-password">
                     <input type="checkbox" id="signup-show-password">
@@ -102,6 +102,6 @@
             </form>
         </div>
     </div>
-    <script src="../../js/script.js"></script>
+    <script src="../../JS/script.js"></script>
 </body>
 </html>
