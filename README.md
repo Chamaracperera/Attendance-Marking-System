@@ -33,8 +33,8 @@
    - ⏳ **Selected Time Period** (Start & end date filtering)
    - 🎟 **Event-wise** (Filtered by event number)
 
-✅ **Graphical Representation** – Visualize attendance trends with **Chart.js**.
-✅ **Excel & PDF Export** – Generate and store reports in **Excel** (saved in the `report` folder) and **PDF** (via TCPDF).  
+✅ **Graphical Representation** – Visualize attendance trends.
+✅ **Excel & PDF Export** – Generate and store reports in **Excel** (saved in the `report` folder) and **PDF** (via DOMPDF).  
 ✅ **Push Notifications** – Notify lecturers when a student is absent. 🔔
 ✅ **Mobile Responsive** – Optimized views for **desktop & mobile**, displaying summarized data smartly.
 ✅ **Add Lectures and Events** – Schedule lectures and events with it's details.
