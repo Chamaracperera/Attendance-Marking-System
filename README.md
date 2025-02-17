@@ -64,7 +64,7 @@
 - **PHPMailer**: Download from [GitHub](https://github.com/PHPMailer/PHPMailer) and place it inside the `php/` folder.
 - **Report Converters**:
   - **Excel Export**: Download the required library from [PhpSpreadsheet](https://github.com/PHPOffice/PhpSpreadsheet) and place the files inside the `reports/vendor/` folder.
-  - **PDF Export**: Download TCPDF from [TCPDF GitHub](https://github.com/tecnickcom/TCPDF) and place the files inside the `reports/vendor/` folder.
+  - **PDF Export**: Download DOMPDF from [DOMPDF GitHub](https://github.com/dompdf/dompdf) and place the files inside the `reports/vendor/` folder.
 
 You can get these dependencies from their official sources or package repositories.
 
@@ -83,7 +83,7 @@ You can get these dependencies from their official sources or package repositori
 - **Languages:** PHP, HTML, JavaScript, CSS
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** PHP, MySQL
-- **Libraries:** TCPDF (PDF export), PhpSpreadsheet (Excel export), PHPMailer(Emails), Chart.js (Graphs), AJAX (Dynamic Data Fetching)
+- **Libraries:** DOMPDF (PDF export), PhpSpreadsheet (Excel export), PHPMailer(Emails), AJAX (Dynamic Data Fetching)
 - **Code Editor:** VS Code
 - **Localserver**: XAMPP, WAMP
 
@@ -130,15 +130,15 @@ This project is made possible through the collaboration of the following team me
   * [Sathsarani Geethamali](https://github.com/Sathsarani2002)
 * **Feature 2 –QR code generation & scanning**
   * [Prageeth Dissanayake](https://github.com/PrageethDisanayaka)
-* **Feature 3 – manage Reports**
+* **Feature 3 – Manage Reports**
   * [Chamara Perera ](https://github.com/Chamaracperera)
 * **Feature 4 – Manage Lectures and Event Schedules**
   * [Chanuli Sandanayake](https://github.com/Chanuli-Sandanayake)
-* **Feature 5 – **
+* **Feature 5 – Location Tracking**
   * [Avindi Navodya ](https://github.com/AvindiNavodya)
-* **Feature 6 – **
+* **Feature 6 – Manage Notification**
   * [Chamathya Sepiyumi](https://github.com/Du2002)
-* **Feature 7 – **
+* **Feature 7 – Manage Absent Messages**
   * [Imansa Gayathmi](https://github.com/Imansa2002)
   
 
