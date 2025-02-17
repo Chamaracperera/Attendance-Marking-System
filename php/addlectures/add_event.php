@@ -1,68 +1,89 @@
-<?php
+<?php 
+session_start();
+
+if (!isset($_SESSION['user_name'])) {
+    header('Location:../../index.html?error=notloggedin');
+    exit();
+}
+
+$lecturer_id = $_SESSION['lecturer_id'];
+
 include '../db.php';
 
-// Fetch event details from form
+function getStudentTables($conn) {
+    $tables = [];
+    $result = mysqli_query($conn, "SHOW TABLES");
+    
+    while ($row = mysqli_fetch_array($result)) {
+        if (preg_match('/^\d{4}_\d{2}$/', $row[0])) {
+            $tables[] = $row[0];
+        }
+    }
+    return $tables;
+}
+
 $topic = $_POST['topic'];
 $event_number = $_POST['event_number'];
 $date = $_POST['date'];
 $time = $_POST['time'];
 $venue = $_POST['venue'];
 $audience = $_POST['audience'];
-$file_name = null; // Default to null if no document uploaded
+$file_name = null;
 
-
-// Check if event number is exactly 5 digits
 if (!preg_match('/^\d{5}$/', $event_number)) {
     echo "<script>alert('Event number must be exactly 5 digits. Please try again.'); window.location.href='index.php';</script>";
     exit();
 }
 
-
-// Check if the event number already exists
 $checkQuery = "SELECT * FROM events WHERE Event_Number = '$event_number'";
 $result = mysqli_query($conn, $checkQuery);
-
 if (mysqli_num_rows($result) > 0) {
-    echo "<script>alert('Event number already exists, please re-enter.'); window.location.href='index.php';</script>";
+    echo "<script>alert('Event number already exists. Please re-enter.'); window.location.href='index.php';</script>";
     exit();
 }
 
-// Check if a file was uploaded
 if (isset($_FILES['document']) && $_FILES['document']['error'] == 0) {
-    // Get the MIME type of the uploaded file
     $file_type = mime_content_type($_FILES['document']['tmp_name']);
-    
-    // Allow only JPG files
-    if ($file_type == 'image/jpeg') {
-        // Generate a unique name for the uploaded file
+    if ($file_type == 'image/jpeg' ) {
         $unique_name = uniqid() . '.jpg';
         $file_name = 'uploads/' . $unique_name;
-        
-        // Move the file to the uploads directory
-        if (move_uploaded_file($_FILES['document']['tmp_name'], $file_name)) {
-            // Success, file moved
-        } else {
-            echo "<script>alert('Error uploading file. Please try again.'); window.location.href='index.php';</script>";
-            exit();
-        }
+        move_uploaded_file($_FILES['document']['tmp_name'], $file_name);
     } else {
-        // If file is not JPG, show alert
         echo "<script>alert('Only JPG files are allowed.'); window.location.href='index.php';</script>";
         exit();
     }
 }
 
-// Prepare the query to insert the event data into the database
-$query = "INSERT INTO events (topic,Event_Number, date, time, venue, audience, document) 
-          VALUES ('$topic','$event_number', '$date', '$time', '$venue', '$audience', '$file_name')";
+$query = "INSERT INTO events (topic, Event_Number, date, time, venue, audience, document) VALUES (?, ?, ?, ?, ?, ?, ?)";
+$stmt = $conn->prepare($query);
+$stmt->bind_param("sssssss", $topic, $event_number, $date, $time, $venue, $audience, $file_name);
 
-// Execute the query and handle success or failure
-if (mysqli_query($conn, $query)) {
-    echo "<script>alert('Event added successfully'); window.location.href='index.php';</script>";
+if ($stmt->execute()) {
+    $message = "New Event: $topic on $date at $time in $venue for $audience";
+
+    $studentTables = getStudentTables($conn);
+    $subject_id = 11; // Example subject ID
+
+    foreach ($studentTables as $table) {
+        $studentQuery = "SELECT student_id FROM `$table`";
+        $studentsResult = $conn->query($studentQuery);
+
+        while ($row = $studentsResult->fetch_assoc()) {
+            $student_id = $row['student_id'];
+
+            $notifSql = "INSERT INTO notifications (lecturer_id, student_id, subject_id, message, timestamp, status) VALUES (?, ?, ?, ?, NOW(), 'unread')";
+            $notifStmt = $conn->prepare($notifSql);
+            $notifStmt->bind_param("isis", $lecturer_id, $student_id, $subject_id, $message);
+            $notifStmt->execute();
+            $notifStmt->close();
+        }
+    }
+
+    echo "<script>alert('Event added successfully! Notifications sent.'); window.location.href='index.php';</script>";
 } else {
-    echo "<script>alert('Error occurred. Try again.'); window.location.href='index.php';</script>";
+    echo "<script>alert('Error adding event. Please try again.'); window.location.href='index.php';</script>";
 }
 
-// Close the database connection
-mysqli_close($conn);
+$stmt->close();
+$conn->close();
 ?>

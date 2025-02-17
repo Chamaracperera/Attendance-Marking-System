@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-
+//Check if the user is logged in
 if (!isset($_SESSION['user_name'])) {
-    header('Location:../../index.html?error=notloggedin');
-    exit();
+   header('Location:../../index.html?error=notloggedin');
+   exit();
 }
 
 ?>
@@ -37,7 +37,8 @@ if (!isset($_SESSION['user_name'])) {
                         <span class="username"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
-                    <li><a href="../lecturer/Lecturer_Dashboard.php">Home</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Help</a></li>
                 </ul>
                 <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
