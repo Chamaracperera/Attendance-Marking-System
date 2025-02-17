@@ -43,13 +43,10 @@ if (!isset($_SESSION['username'])) {
                 <a href="user.php">Manage User</a>
             </div>
             <div class="option">
-                <a href="batch.php">Manage Batch Details</a>
+                <a href="batch.php">Add New Batch</a>
             </div>
             <div class="option">
-                <a href="assign.php">Assign Batch to Courses/ Lecturers</a>
-            </div>
-            <div class="option">
-                <a href="#">Manage Location</a>
+                <a href="assign.php">Assign Batch</a>
             </div>
         </section>
     </main>

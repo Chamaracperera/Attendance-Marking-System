@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                         $notificationMessage = "Student $studentID submitted an absence for Subject $subjectName on $dateOfAbsence.";
                         $notifStmt = $conn->prepare("INSERT INTO notifications (lecturer_id, subject_id, student_id, message, timestamp, status)
                                                      VALUES (?,?,?,?,NOW(),'unread')");
-                        $notifStmt->bind_param("iiis", $lecturerID, $subject, $studentID, $notificationMessage);
+                        $notifStmt->bind_param("iiss", $lecturerID, $subject, $studentID, $notificationMessage);
 
                         if ($notifStmt->execute()) {
                             $conn->commit(); // Everything successful, commit changes
@@ -168,14 +168,19 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             
             <div class="navbar-right">
                 <ul class="links">
-                    <div class="profile">
+                <div class="profile">
                         <img src="../../img/user.png" class="profile-photo">
                         <span class="username"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
+                        <div class="popup-info">
+                            <p>Student ID: <?php echo htmlspecialchars($_SESSION['student_id']); ?></p>
+                            <p>Email: <?php echo htmlspecialchars($_SESSION['email']); ?></p>
+                            <p>Batch: <?php echo htmlspecialchars($_SESSION['year']); ?></p>                        
+                            <p>Department: <?php echo htmlspecialchars($_SESSION['department_name']); ?></p>
+                        </div>
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
                     <li><a href="../student/Student_Dashboard.php">Home</a></li>
                 </ul>
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </nav>
@@ -235,7 +240,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     </div>
 
                     <div class="form-group">
-                        <label for="proofFile">Upload Proof Document:</label>
+                        <label for="proofFile">Upload Proof Document (pdf/doc/docx): </label>
                         <input type="file" id="proofFile" name="proofFile" required>
                     </div>
 
@@ -267,7 +272,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     });
 
     function goHome() {
-    window.location.href = "/nn/php/student/Student_Dashboard.php";
+    window.location.href = "../student/Student_Dashboard.php";
     }
     </script>
     

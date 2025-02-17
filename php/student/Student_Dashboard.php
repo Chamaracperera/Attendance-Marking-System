@@ -1,12 +1,15 @@
 <?php
-session_start(); // Add this line to start the session
+session_start();
+
+
 if (!isset($_SESSION['name'])) {
-    // Redirect to login if session is not set
-    header("Location: login.php");
+    header('Location:../../index.html?error=notloggedin');
     exit();
 }
+
 ?>
 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -63,7 +66,7 @@ if (!isset($_SESSION['name'])) {
             position: absolute;
             top: -15px;
             right: -10px;
-            background-color: red;
+            background-color: rgba(0, 157, 196, 0.95);
             color: white;
             border-radius: 40%;
             padding: 2px 6px; /* Adjust the padding to fit the text */
@@ -76,6 +79,7 @@ if (!isset($_SESSION['name'])) {
             display: block;
         }
     </style>
+
 </head>
 <body>
     <header>
@@ -100,8 +104,6 @@ if (!isset($_SESSION['name'])) {
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
                     <li><a href="#">Home</a></li>
-
-
                 </ul>
                 <div class="notifications">
                     <span class="notification-btn material-symbols-rounded" id="notification-bell" aria-label="Notifications">notifications</span>
@@ -192,7 +194,5 @@ if (!isset($_SESSION['name'])) {
         window.location.href = "../logout.php";
         });
   </script>
-  
-
 </body>
 </html>

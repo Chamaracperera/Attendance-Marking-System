@@ -12,7 +12,7 @@ include '../db.php';
 // Fetch notifications for the student
 $student_id = $_SESSION['student_id']; // Sanitize input
 
-$sql = "SELECT id, message, timestamp FROM notifications WHERE student_id = ? AND status = 'unread' ORDER BY timestamp DESC LIMIT 10";
+$sql = "SELECT id, message, timestamp FROM notification WHERE student_id = ? AND status = 'unread' ORDER BY timestamp DESC LIMIT 10";
 $stmt = $conn->prepare($sql);
 
 if (!$stmt) {

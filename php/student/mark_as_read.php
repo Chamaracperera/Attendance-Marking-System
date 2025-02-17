@@ -14,7 +14,7 @@ if (isset($_POST['id'])) {
     include '../db.php';
 
     // Update the notification status to 'read'
-    $sql = "UPDATE notifications SET status = 'read' WHERE id = ? AND student_id = ?";
+    $sql = "UPDATE notification SET status = 'read' WHERE id = ? AND student_id = ?";
     $stmt = $conn->prepare($sql);
 
     if (!$stmt) {

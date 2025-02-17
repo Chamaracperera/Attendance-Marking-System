@@ -74,6 +74,6 @@ if ($eventResult->num_rows > 0) {
     echo json_encode(['status' => 'success', 'data' => $_SESSION['event_data']]);
     exit();
 } else {
-    echo json_encode(['status' => 'error', 'message' => 'Error: Event not found.']);
+    echo json_encode(['status' => 'error', 'message' => 'Event not found.']);
 }
 ?>

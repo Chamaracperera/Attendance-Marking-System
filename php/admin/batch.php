@@ -13,7 +13,7 @@ if (!isset($_SESSION['username'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR-Based Attendance Marking System - Add Batch</title>
+    <title>Admin Dashboard - Batch Management</title>
     <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="user.css">
 </head>

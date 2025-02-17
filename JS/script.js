@@ -45,6 +45,12 @@ document.getElementById('forgot-password')?.addEventListener('click', (e) => {
     toggleForm('password-reset-form');
 });
 
+// Event listener for canceling the password reset process
+document.getElementById('cancel-reset')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    toggleForm('login-form');
+});
+
 // Show/Hide password
 document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', function () {
@@ -148,11 +154,4 @@ document.addEventListener("DOMContentLoaded", function () {
             window.history.replaceState(null, null, url); // Update the URL without reloading
         }
     }, 1000); // 1 seconds delay before starting the fade and URL cleanup
-});
-
-
-// Event listener for canceling the password reset process
-document.getElementById('cancel-reset')?.addEventListener('click', (e) => {
-    e.preventDefault();
-    toggleForm('login-form');
 });

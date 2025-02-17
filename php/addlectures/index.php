@@ -32,15 +32,19 @@ if (!isset($_SESSION['user_name'])) {
             
             <div class="navbar-right">
                 <ul class="links">
-                    <div class="profile">
+                <div class="profile">
                         <img src="../../img/user.png" class="profile-photo">
-                        <span class="username"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                        <span class="username"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
+                        <div class="popup-info">
+                            <p>Student ID: <?php echo htmlspecialchars($_SESSION['student_id']); ?></p>
+                            <p>Email: <?php echo htmlspecialchars($_SESSION['email']); ?></p>
+                            <p>Batch: <?php echo htmlspecialchars($_SESSION['year']); ?></p>                        
+                            <p>Department: <?php echo htmlspecialchars($_SESSION['department_name']); ?></p>
+                        </div>
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="../lecturer/Lecturer_Dashboard.php">Home</a></li>
                 </ul>
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </nav>

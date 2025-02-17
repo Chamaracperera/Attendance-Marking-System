@@ -309,8 +309,6 @@ $(document).ready(function() {
             return;
         }
 
-        // Show a loading indicator (optional)
-        $('#loadingIndicator').show(); // Assume you have a loading element with this ID
 
         $.ajax({
             url: 'generate_event_report.php',
@@ -329,9 +327,7 @@ $(document).ready(function() {
             error: function() {
                 alert('Error retrieving event data. Please try again.'); // User-friendly error message
             },
-            complete: function() {
-                $('#loadingIndicator').hide(); // Hide loading indicator when the request is complete
-            }
+            
         });
     });
 

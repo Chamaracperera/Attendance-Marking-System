@@ -16,9 +16,11 @@ $(document).ready(function () {
                     subjectDropdown.append('<option value="">Select Subject</option>');
                     data.forEach(subject => {
                         // Display subject_code and subject_name in option text, use subject_id as value
-                        subjectDropdown.append(
-                            `<option value="${subject.subject_id}">${subject.subject_code} - ${subject.subject_name}</option>`
-                        );
+                        if (subject.subject_id != 11) { // Hides subject_id = 3
+                            subjectDropdown.append(
+                                `<option value="${subject.subject_id}">${subject.subject_code} - ${subject.subject_name}</option>`
+                            );
+                        }
                     });
                 }
             },

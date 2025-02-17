@@ -9,7 +9,7 @@ if (!isset($_SESSION['user_name'])) {
 
 $username = $_SESSION['user_name'];
 
-include 'db.php'; // Include the database connection
+include '../db.php'; // Include the database connection
 ?>
 
 <!DOCTYPE html>
@@ -36,14 +36,18 @@ include 'db.php'; // Include the database connection
                 
                 <div class="navbar-right">
                     <ul class="links">
-                        <div class="profile">
-                            <img src="../../img/user.png" class="profile-photo">
-                            <span class="username"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                    <div class="profile">
+                        <img src="../../img/user.png" class="profile-photo">
+                        <span class="username"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
+                        <div class="popup-info">
+                            <p>Email: <?php echo htmlspecialchars($_SESSION['email']); ?></p>
+                            <p>Lecturer ID: <?php echo htmlspecialchars($_SESSION['lecturer_id']); ?></p>                         
+                            <p>Department: <?php echo htmlspecialchars($_SESSION['department_name']); ?></p>
                         </div>
+                    </div>
                         <span class="close-btn material-symbols-rounded">close</span>
                         <li><a href="../lecturer/Lecturer_Dashboard.php">Home</a></li>
                     </ul>
-                    <span class="notification-btn material-symbols-rounded">notifications</span>
                     <button class="logout-btn" id="logoutBtn">LOGOUT</button>
                 </div>
             </nav>

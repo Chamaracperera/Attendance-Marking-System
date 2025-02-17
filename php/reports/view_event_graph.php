@@ -56,6 +56,7 @@ if ($selectedDepartment || $selectedBatch) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../../css/style.css">
@@ -177,10 +178,8 @@ if ($selectedDepartment || $selectedBatch) {
                         </div>
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Help</a></li>
+                    <li><a href="../lecturer/Lecturer_Dashboard.php">Home</a></li>
                 </ul>
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </nav>

@@ -3,7 +3,7 @@ session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
-    header('Location:../../index.html?error=notloggedin');
+    header('Location: ../../index.html?error=notloggedin');
     exit();
 }
 
@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $student_id = $_POST['student_id'];
     $name = $_POST['name'];
     $email = $_POST['email'];
-    $year = $_POST['year']; // Ensure batch year is passed
+    $year = $_POST['year'];
 
     if (empty($student_id) || empty($name) || empty($email) || empty($year)) {
         echo 'All fields are required.';
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit;
     }
 
-    $stmt->bind_param("ssi", $name, $email, $student_id);
+    $stmt->bind_param("sss", $name, $email, $student_id);
 
     if ($stmt->execute()) {
         echo 'Student details updated successfully.';

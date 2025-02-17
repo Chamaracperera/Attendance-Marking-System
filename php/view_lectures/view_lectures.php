@@ -7,7 +7,9 @@ if (!isset($_SESSION['name'])) {
     exit();
  }
  
- $username = $_SESSION['name'];
+$username = $_SESSION['name'];
+$department_id = $_SESSION['department_id'];
+$batch_id = $_SESSION['batch_id'];
 
 include '../db.php';
 $sql = "SELECT 
@@ -23,9 +25,13 @@ $sql = "SELECT
         JOIN batch b ON l.batch_id = b.batch_id
         JOIN department d ON l.department_id = d.department_id
         JOIN subjects s ON l.subject_id = s.subject_id
+        WHERE l.batch_id = ? AND l.department_id = ?
         ORDER BY l.date DESC";
 
-$result = $conn->query($sql);
+$stmt = $conn->prepare($sql);
+$stmt->bind_param('ii', $batch_id, $department_id);
+$stmt->execute();
+$result = $stmt->get_result();
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +40,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lecture Details</title>
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../../css/style.css">
@@ -49,14 +56,19 @@ $result = $conn->query($sql);
             </a>
             <div class="navbar-right">
                     <ul class="links">
-                        <div class="profile">
-                            <img src="../../img/user.png" class="profile-photo">
-                            <span class="username"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
+                    <div class="profile">
+                        <img src="../../img/user.png" class="profile-photo">
+                        <span class="username"><?php echo htmlspecialchars($_SESSION['name']); ?></span>
+                        <div class="popup-info">
+                            <p>Student ID: <?php echo htmlspecialchars($_SESSION['student_id']); ?></p>
+                            <p>Email: <?php echo htmlspecialchars($_SESSION['email']); ?></p>
+                            <p>Batch: <?php echo htmlspecialchars($_SESSION['year']); ?></p>                        
+                            <p>Department: <?php echo htmlspecialchars($_SESSION['department_name']); ?></p>
                         </div>
+                    </div>
                         <span class="close-btn material-symbols-rounded">close</span>
-                        <li><a href="#">Home</a></li>
+                        <li><a href="../student/Student_Dashboard.php">Home</a></li>
                     </ul>
-                    <span class="notification-btn material-symbols-rounded">notifications</span>
                     <button class="logout-btn" id="logoutBtn">LOGOUT</button>
                 </div>
         </nav>

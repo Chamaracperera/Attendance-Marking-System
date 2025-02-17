@@ -70,7 +70,7 @@ if ($isAuthenticated) {
     exit();
 } else {
     
-    header("Location: Student.html?stat=Invalid_Registration_Number_or_password");
+    header("Location: Student.php?stat=Invalid_Registration_Number_or_password");
 }
 
 ?>

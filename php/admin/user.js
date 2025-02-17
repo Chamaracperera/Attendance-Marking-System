@@ -31,12 +31,6 @@ function searchTable(inputId, tableId) {
     }
 }
 
-// Logout Function
-document.getElementById("logoutBtn").addEventListener("click", function () {
-    alert("You have been logged out!");
-    window.location.href = "../../php/logout.php";
-});
-
 // Search Function
 function searchTable(inputId, tableId) {
     const input = document.getElementById(inputId);
@@ -244,7 +238,7 @@ function fetchStudents(department) {
 }
 
 function editStudent(studentId, year) {
-    const row = document.querySelector(`button[onclick='editStudent(${studentId}, "${year}")']`).closest('tr');
+    const row = document.querySelector(`button[onclick="editStudent('${studentId}', '${year}')"]`).closest('tr');
     const cells = row.getElementsByTagName('td');
 
     // Convert the student details into editable input fields
@@ -255,11 +249,12 @@ function editStudent(studentId, year) {
     }
 
     // Change the "Edit" button to "Save"
-    cells[3].innerHTML = `<button onclick="saveStudent(${studentId}, '${year}')" class="save-btn">Save</button>`;
+    cells[3].innerHTML = `<button onclick="saveStudent('${studentId}', '${year}')" class="save-btn">Save</button>`;
 }
 
+
 function saveStudent(studentId, year) {
-    const row = document.querySelector(`button[onclick='saveStudent(${studentId}, "${year}")']`).closest('tr');
+    const row = document.querySelector(`button[onclick='saveStudent("${studentId}", "${year}")']`).closest('tr');
     const cells = row.getElementsByTagName('td');
     const name = cells[1].querySelector('input').value;
     const email = cells[2].querySelector('input').value;
@@ -288,6 +283,7 @@ function deleteStudent(studentId, year) {
                 fetchStudents(document.getElementById('batchSelect').value);
             }
         };
-        xhr.send(`student_id=${studentId}&year=${year}`);
+        xhr.send(`student_id=${encodeURIComponent(studentId)}&year=${encodeURIComponent(year)}`);
     }
 }
+

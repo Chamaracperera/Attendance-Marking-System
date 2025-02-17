@@ -15,7 +15,10 @@ $result = $stmt->get_result();
 
 $subjects = [];
 while ($row = $result->fetch_assoc()) {
-    $subjects[] = $row;
+    // Skip subject_id = 11
+    if ($row['subject_id'] != 11) {
+        $subjects[] = $row;
+    }
 }
 
 echo json_encode($subjects);

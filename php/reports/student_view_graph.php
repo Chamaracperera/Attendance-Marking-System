@@ -105,7 +105,6 @@ $totalAbsences = $total_lectures - $totalPresents;
 $attPercentage = $total_lectures > 0 ? ($totalPresents / $total_lectures) * 100 : 0;
 $attendancePercentage = round($attPercentage);
 
-
 // Determine qualification for exam
 $qualified = ($attendancePercentage >= 80) ? "Yes" : "No";
 
@@ -117,6 +116,7 @@ $qualified = ($attendancePercentage >= 80) ? "Yes" : "No";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -235,9 +235,7 @@ $qualified = ($attendancePercentage >= 80) ? "Yes" : "No";
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
                     <li><a href="../student/Student_Dashboard.php">Home</a></li>
-                    <li><a href="#">Help</a></li>
                 </ul>
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </nav>

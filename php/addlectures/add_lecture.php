@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 while ($row = $studentsResult->fetch_assoc()) {
                     $student_id = $row['student_id'];
-                    $notifSql = "INSERT INTO notifications (lecturer_id, student_id, subject_id, message, timestamp, status) VALUES (?, ?, ?, ?, NOW(), 'unread')";
+                    $notifSql = "INSERT INTO notification (lecturer_id, student_id, subject_id, message, timestamp, status) VALUES (?, ?, ?, ?, NOW(), 'unread')";
                     $notifStmt = $conn->prepare($notifSql);
                     $notifStmt->bind_param("isis",$lecturer_id, $student_id, $subject_id, $message);
                     $notifStmt->execute();

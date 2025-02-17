@@ -1,10 +1,9 @@
 <?php
-
 session_start();
 
 // Check if the user is logged in
 if (!isset($_SESSION['user_name'])) {
-    header('Location: ../../index.html?error=notloggedin');
+    header('Location:../../index.html?error=notloggedin');
     exit();
 }
 
@@ -67,7 +66,7 @@ if (!isset($_SESSION['user_name'])) {
             position: absolute;
             top: -15px;
             right: -10px;
-            background-color: red;
+            background-color: rgba(0, 157, 196, 0.95);
             color: white;
             border-radius: 40%;
             padding: 2px 6px; /* Adjust the padding to fit the text */
@@ -80,21 +79,20 @@ if (!isset($_SESSION['user_name'])) {
             display: block;
         }
     </style>
-    
 </head>
 <body>
     <header>
         <nav class="navbar">
             <span class="hamburger-btn material-symbols-rounded">menu</span>
             <a href="#" class="logo">
-                <img src="../../img/logo.png" alt="Attendance System Logo">
+                <img src="../../img/logo.png" alt="logo">
                 <h2>Attendance Marking System</h2>
             </a>
             
             <div class="navbar-right">
                 <ul class="links">
                     <div class="profile">
-                        <img src="../../img/user.png" class="profile-photo" alt="User Profile">
+                        <img src="../../img/user.png" class="profile-photo">
                         <span class="username"><?php echo htmlspecialchars($_SESSION['user_name']); ?></span>
                         <div class="popup-info">
                             <p>Email: <?php echo htmlspecialchars($_SESSION['email']); ?></p>
@@ -131,6 +129,7 @@ if (!isset($_SESSION['user_name'])) {
             </div>
         </section>
     </main>
+    <script src="../../js/script_2.js"></script>
     <script>
         $(document).ready(function () {
             // Fetch notifications when the page loads
@@ -155,7 +154,7 @@ if (!isset($_SESSION['user_name'])) {
                             notifications.forEach(function(notification) {
                                 notificationHTML += `
                                     <li class="notification-item" data-id="${notification.id}">
-                                        ${notification.message} - <strong>${notification.timestamp}</strong>
+                                        <strong>${notification.message}</strong> - ${notification.timestamp}
                                         <button class="mark-as-read" data-id="${notification.id}">Mark as Read</button>
                                     </li>
                                 `;
@@ -197,7 +196,5 @@ if (!isset($_SESSION['user_name'])) {
             }
         });
     </script>
-
-    <script src="../../js/script_2.js"></script>
 </body>
 </html>

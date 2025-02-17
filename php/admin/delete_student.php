@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Check if the user is logged in
 if (!isset($_SESSION['username'])) {
     header('Location:../../index.html?error=notloggedin');
     exit();
@@ -11,24 +10,24 @@ require '../db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $student_id = $_POST['student_id'];
-    $year = $_POST['year']; // Get the batch year
+    $year = $_POST['year'];
 
-    // Ensure year is provided
-    if (empty($year)) {
-        echo "Batch year is required.";
-        exit;
+    $allowed_batches = ['2019_20', '2020_21', '2021_22', '2022_23'];
+    if (!in_array($year, $allowed_batches)) {
+        echo "Invalid batch year.";
+        exit();
     }
 
-    // Perform deletion query
+
     $sql = "DELETE FROM `$year` WHERE student_id = ?";
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
         echo "Database query error.";
-        exit;
+        exit();
     }
 
-    $stmt->bind_param("i", $student_id);
+    $stmt->bind_param("s", $student_id);
     $stmt->execute();
 
     if ($stmt->affected_rows > 0) {

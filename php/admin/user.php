@@ -15,7 +15,7 @@ require '../db.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QR-Based Attendance Marking System - User Management</title>
+    <title>Admin Dashboard - User Management</title>
     <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="user.css">
 </head>
@@ -117,6 +117,13 @@ require '../db.php';
 
 <script src="../../JS/script_2.js"></script>
 <script src="user.js"></script>
+<script>
+        document.getElementById("logoutBtn").addEventListener("click", function () {
+            alert("You have been logged out!");
+            window.location.href = "../logout.php";
+        });
+
+</script>
 
 </body>
 </html>

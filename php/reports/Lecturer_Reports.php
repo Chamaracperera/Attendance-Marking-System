@@ -15,6 +15,7 @@ if (!isset($_SESSION['user_name'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
+    <link rel="shortcut icon" href="../../img/logo.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../../css/style.css">
@@ -43,9 +44,7 @@ if (!isset($_SESSION['user_name'])) {
                     </div>
                     <span class="close-btn material-symbols-rounded">close</span>
                     <li><a href="../lecturer/Lecturer_Dashboard.php">Home</a></li>
-                    <li><a href="#">Help</a></li>
                 </ul>
-                <span class="notification-btn material-symbols-rounded">notifications</span>
                 <button class="logout-btn" id="logoutBtn">LOGOUT</button>
             </div>
         </nav>
@@ -119,9 +118,11 @@ if (!isset($_SESSION['user_name'])) {
                 <form id="event-report-form">
                     <label for="event-id">Enter Event Number:</label><br>
                     <input type="number" style="border-radius: 8px; padding: 8px; border: 1px solid #ccc;" id="event-id" name="event-id" required>
+                    
                     <br><br>
                     <button class="button100" type="button" id="prev-to-home1">Previous</button>
                     <button class="button100" type="button" id="generate-event-report">Generate Report</button>
+                    
                 </form>
             </div>
             
